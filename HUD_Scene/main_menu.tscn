@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://rbr1necs2ypb"]
+
+[ext_resource type="Script" uid="uid://v0htf68gu6im" path="res://Scripts/main_menu.gd" id="1_v32n6"]
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_v32n6")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="Start_btn" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Играть"
+
+[node name="Options_btn" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Настройки"
+
+[node name="Exit_btn" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Выход"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Start_btn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit_btn" to="." method="_on_exit_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit_btn" to="MarginContainer/VBoxContainer/Start_btn" method="_on_exit_btn_pressed"]
