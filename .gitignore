@@ -1,0 +1,11 @@
+.import/
+.export/
+*.translation
+*.mono/
+.mono/
+.vscode/
+.godot/
+.idea/
+*.tmp
+*.bak
+*.old
