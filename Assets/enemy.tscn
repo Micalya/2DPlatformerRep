@@ -1,0 +1,129 @@
+[gd_scene load_steps=18 format=3 uid="uid://bvng8v5khjw77"]
+
+[ext_resource type="Script" uid="uid://c64gyac43r5sl" path="res://Assets/enemy.gd" id="1_wlbdh"]
+[ext_resource type="Texture2D" uid="uid://wt5ngxd41fn1" path="res://Assets/Enemyes/GandalfHardcore Goddess NPC.png" id="2_dirw5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hvfyp"]
+radius = 11.0
+height = 66.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7755"]
+atlas = ExtResource("2_dirw5")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwuu0"]
+atlas = ExtResource("2_dirw5")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w431v"]
+atlas = ExtResource("2_dirw5")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0wfr"]
+atlas = ExtResource("2_dirw5")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlbdh"]
+atlas = ExtResource("2_dirw5")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nl8m"]
+atlas = ExtResource("2_dirw5")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1qe3"]
+atlas = ExtResource("2_dirw5")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ww4a"]
+atlas = ExtResource("2_dirw5")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_531eg"]
+atlas = ExtResource("2_dirw5")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkgf5"]
+atlas = ExtResource("2_dirw5")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlp8n"]
+atlas = ExtResource("2_dirw5")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1awkd"]
+atlas = ExtResource("2_dirw5")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qo1ix"]
+atlas = ExtResource("2_dirw5")
+region = Rect2(768, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vew7h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7755")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwuu0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w431v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0wfr")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlbdh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4nl8m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1qe3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ww4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_531eg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkgf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlp8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1awkd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qo1ix")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 10.0
+}]
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_mask = 16
+script = ExtResource("1_wlbdh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CapsuleShape2D_hvfyp")
+
+[node name="EnemyAnim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vew7h")
+animation = &"Walk"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -10)
+zoom = Vector2(1.7, 1.7)
+position_smoothing_enabled = true

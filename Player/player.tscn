@@ -10,7 +10,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hvfyp"]
 radius = 9.0
-height = 32.0
+height = 28.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gu6f8"]
 atlas = ExtResource("2_od3ui")
@@ -247,7 +247,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 6.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -334,6 +334,9 @@ shape = SubResource("CapsuleShape2D_hvfyp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_uvbbp")
-animation = &"Idle"
-frame = 2
-frame_progress = 0.9450861
+animation = &"Death"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -10)
+zoom = Vector2(1.7, 1.7)
+position_smoothing_enabled = true

@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://do61bf16nwtm4"]
+[gd_scene load_steps=10 format=3 uid="uid://do61bf16nwtm4"]
 
 [ext_resource type="Texture2D" uid="uid://bu0d85kc231cg" path="res://Assets/Terrain/Terrain (16x16).png" id="1_pa6j6"]
 [ext_resource type="PackedScene" uid="uid://dogfjbluhqs0e" path="res://exit_door.tscn" id="2_4dvsh"]
 [ext_resource type="PackedScene" uid="uid://d2scxt2hroc2r" path="res://Player/player.tscn" id="3_ks8n1"]
+[ext_resource type="Texture2D" uid="uid://b8r04db5yuuky" path="res://Assets/background/background_layer_1.png" id="4_4dvsh"]
+[ext_resource type="Texture2D" uid="uid://tgugrermnei4" path="res://Assets/background/background_layer_2.png" id="5_ks8n1"]
+[ext_resource type="PackedScene" uid="uid://bvng8v5khjw77" path="res://Assets/enemy.tscn" id="6_x5oxt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fj7yv"]
 size = Vector2(449, 49)
@@ -260,6 +263,7 @@ sources/0 = SubResource("TileSetAtlasSource_tlwt5")
 [node name="World" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(315, -61)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(224.5, 455.5)
@@ -272,9 +276,60 @@ format = 2
 layer_0/tile_data = PackedInt32Array(1703936, 458752, 0, 1769472, 458752, 1, 1835008, 458752, 2, 1703937, 524288, 0, 1769473, 524288, 1, 1835009, 524288, 2, 1703938, 524288, 0, 1769474, 524288, 1, 1835010, 524288, 2, 1703939, 393216, 0, 1769475, 393216, 1, 1835011, 393216, 2, 1703940, 458752, 0, 1769476, 458752, 1, 1835012, 458752, 2, 1703941, 524288, 0, 1769477, 524288, 1, 1835013, 524288, 2, 1703942, 393216, 0, 1769478, 393216, 1, 1835014, 393216, 2, 1703943, 458752, 0, 1769479, 458752, 1, 1835015, 458752, 2, 1703944, 524288, 0, 1769480, 524288, 1, 1835016, 524288, 2, 1703945, 393216, 0, 1769481, 393216, 1, 1835017, 393216, 2, 1703946, 458752, 0, 1769482, 458752, 1, 1835018, 458752, 2, 1703947, 524288, 0, 1769483, 524288, 1, 1835019, 524288, 2, 1703948, 393216, 0, 1769484, 393216, 1, 1835020, 393216, 2, 1703949, 458752, 0, 1769485, 458752, 1, 1835021, 458752, 2, 1703950, 524288, 0, 1769486, 524288, 1, 1835022, 524288, 2, 1703951, 393216, 0, 1769487, 393216, 1, 1835023, 393216, 2, 1703952, 458752, 0, 1769488, 458752, 1, 1835024, 458752, 2, 1703953, 524288, 0, 1769489, 524288, 1, 1835025, 524288, 2, 1703954, 393216, 0, 1769490, 393216, 1, 1835026, 393216, 2, 1703955, 458752, 0, 1769491, 458752, 1, 1835027, 458752, 2, 1703956, 524288, 0, 1769492, 524288, 1, 1835028, 524288, 2, 1703957, 393216, 1, 1769493, 393216, 1, 1835029, 393216, 2, 1703958, 458752, 1, 1769494, 458752, 1, 1835030, 458752, 2, 1703959, 524288, 1, 1769495, 524288, 1, 1835031, 524288, 2, 1703960, 393216, 0, 1769496, 393216, 1, 1835032, 393216, 2, 1703961, 393216, 0, 1769497, 393216, 1, 1835033, 393216, 2, 1703962, 458752, 0, 1769498, 458752, 1, 1835034, 458752, 2, 1703963, 393216, 0, 1769499, 393216, 1, 1835035, 393216, 2, 1703964, 458752, 0, 1769500, 458752, 1, 1835036, 458752, 2, 1703965, 524288, 0, 1769501, 524288, 1, 1835037, 524288, 2, 1507355, 393216, 0, 1572891, 393216, 1, 1638427, 393216, 2, 1507356, 458752, 0, 1572892, 458752, 1, 1638428, 458752, 2, 1507357, 524288, 0, 1572893, 524288, 1, 1638429, 524288, 2, 1769471, 393216, 0, 1835007, 393216, 1, 1900543, 393216, 2, 1572863, 393216, 0, 1638399, 393216, 1, 1703935, 393216, 2, 1507328, 458752, 0, 1572864, 458752, 1, 1638400, 458752, 2, 1507329, 524288, 0, 1572865, 524288, 1, 1638401, 524288, 2, 1376255, 393216, 0, 1441791, 393216, 1, 1507327, 393216, 2, 1376256, 458752, 1, 1441792, 458752, 2, 1376257, 524288, 1, 1441793, 524288, 2, 1376252, 393216, 0, 1441788, 393216, 1, 1507324, 393216, 2, 1376253, 458752, 0, 1441789, 458752, 1, 1507325, 458752, 2, 1376254, 524288, 0, 1441790, 524288, 1, 1507326, 524288, 2, 1376249, 393216, 0, 1441785, 393216, 1, 1507321, 393216, 2, 1376250, 458752, 0, 1441786, 458752, 1, 1507322, 458752, 2, 1376251, 524288, 0, 1441787, 524288, 1, 1507323, 524288, 2, 1572857, 393216, 0, 1638393, 393216, 1, 1703929, 393216, 2, 1572858, 458752, 0, 1638394, 458752, 1, 1703930, 458752, 2, 1572859, 524288, 0, 1638395, 524288, 1, 1703931, 524288, 2, 1179644, 393216, 0, 1245180, 393216, 1, 1310716, 393216, 2, 1179645, 458752, 0, 1245181, 458752, 1, 1310717, 458752, 2, 1179646, 524288, 0, 1245182, 524288, 1, 1310718, 524288, 2, 1179641, 393216, 0, 1245177, 393216, 1, 1310713, 393216, 2, 1179642, 458752, 0, 1245178, 458752, 1, 1310714, 458752, 2, 1179643, 524288, 0, 1245179, 524288, 1, 1310715, 524288, 2, 1310720, 458752, 0, 1572888, 393216, 0, 1638424, 393216, 1, 1572889, 458752, 0, 1638425, 458752, 1, 1572890, 524288, 0, 1638426, 524288, 1, 1638421, 393216, 0, 1638422, 458752, 0, 1638423, 524288, 0, 1376285, 393216, 0, 1441821, 393216, 1, 1376286, 458752, 0, 1441822, 458752, 1, 1376287, 524288, 0, 1441823, 524288, 1)
 
 [node name="ExitDoor" parent="." instance=ExtResource("2_4dvsh")]
-position = Vector2(417, 381.00003)
+position = Vector2(732, 320.00003)
 scale = Vector2(1.713875, 1.713875)
 next_scene = "res://Levels/world_2.tscn"
 
 [node name="Player" parent="." instance=ExtResource("3_ks8n1")]
-position = Vector2(237, 396)
+position = Vector2(552, 335)
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -10
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_4dvsh")
+expand_mode = 3
+
+[node name="nearbareGround" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Control" type="Control" parent="nearbareGround"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="nearbareGround/Control"]
+texture_filter = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="nearbareGround/Control/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_ks8n1")
+expand_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="nearbareGround/Control/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_ks8n1")
+expand_mode = 3
+
+[node name="TextureRect3" type="TextureRect" parent="nearbareGround/Control/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_ks8n1")
+expand_mode = 3
+
+[node name="Enemy" parent="." instance=ExtResource("6_x5oxt")]
+position = Vector2(407, 336)

@@ -6,7 +6,7 @@ const SPEED = 300.0
 const BOOST_SPEED = 350.0
 const JUMP_VELOCITY = -400.0
 func _ready() -> void:
-	anim.play("Idle")
+	pass
 	
 func update_animation():
 	if velocity.x:
